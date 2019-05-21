@@ -1,9 +1,17 @@
-<navigation-bar></navigation-bar>
+<main-nav>
+  <div class="homepageMainContentContainer">
+    <div class="backgroundImg">
+      <div class="homepageMainContent">
+        <h1 class="homepageHeader">
+          PROVIDING HEALTHCARE FOR UNDERPRIVILEGED KAPAMPANGANS
+        </h1>
+        <button mat-flat-button
+          [ngClass]="{'donateCTA':true}"
+          color="accent">
+            DONATE TODAY</button>
+      </div>
+    </div>
+  </div>
+</main-nav>
 
-<img src="assets/childCarryingCleftLipBaby.jpg">
-<div>
-  PROVIDING HEALTHCARE FOR UNDERPRIVILEGED KAPAMPANGANS
-</div>
-
-<button>DONATE TODAY</button>
 <router-outlet></router-outlet>
