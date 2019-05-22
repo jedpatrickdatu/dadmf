@@ -23,12 +23,18 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <img src="assets/dadmfLogoGreen.png" width="30" height="30" class="d-inline-block align-top">
-      <span class="title">DATU-ANGELES-DAVID MEMORIAL FOUNDATION</span>
+      <div class="mainNavTitle">
+        <span class="titleFirstLine">DATU-ANGELES-DAVID</span>
+        <span>MEMORIAL FOUNDATION</span>
+      </div>
       <span class="spacer"></span>
-      <a href="#">ABOUT US</a>
-      <a href="#">OUR PROGRAMS</a>
-      <a href="#">GET INVOLVED</a>
-      <a href="#">DONATE</a>
+      <div
+        [ngClass]="{ hidden : isHandset$ | async }">
+        <a href="#">ABOUT US</a>
+        <a href="#">OUR PROGRAMS</a>
+        <a href="#">GET INVOLVED</a>
+        <a href="#">DONATE</a>
+      </div> 
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>
