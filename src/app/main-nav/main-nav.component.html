@@ -9,7 +9,12 @@
       <a mat-list-item href="#">ABOUT US</a>
       <a mat-list-item href="#">PROGRAMS</a>
       <a mat-list-item href="#">GET INVOLVED</a>
-      <a mat-list-item href="#">DONATE</a>
+      <button mat-flat-button
+        [ngClass]="{'donateCTA':true}"
+        (click)="redirectToDonatePage()"
+        color="accent">
+          DONATE
+      </button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -22,8 +27,17 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <img src="assets/dadmfLogoGreen.png" width="30" height="30" class="d-inline-block align-top">
-      <div class="mainNavTitle">
+      <div
+        class="mainNavLogo"
+        (click)="redirectToURL('home')">
+        <img
+          src="assets/dadmfLogoGreen.png"
+          width="30" height="30"
+          class="d-inline-block align-top">
+      </div>
+      <div
+        class="mainNavTitle"
+        (click)="redirectToURL('home')">
         <span class="titleFirstLine">DATU-ANGELES-DAVID</span>
         <span>MEMORIAL FOUNDATION</span>
       </div>
@@ -33,7 +47,12 @@
         <a href="#">ABOUT US</a>
         <a href="#">OUR PROGRAMS</a>
         <a href="#">GET INVOLVED</a>
-        <a href="#">DONATE</a>
+        <button mat-flat-button
+          [ngClass]="{'donateCTA':true}"
+          (click)="redirectToURL('donate')"
+          color="accent">
+            DONATE
+        </button>
       </div> 
     </mat-toolbar>
     <ng-content></ng-content>
