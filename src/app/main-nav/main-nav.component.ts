@@ -13,7 +13,6 @@ export class MainNavComponent {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
-      tap(result => console.log(result.matches)),
       map(result => result.matches)
     );
 
