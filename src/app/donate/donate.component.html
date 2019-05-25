@@ -1,16 +1,16 @@
 <div class="homepageMainContentContainer">
   <div class="backgroundImg">
 
-<mat-card class="donateFormCard">
+<mat-card class="donationFormCard">
     <mat-card-header>
       <mat-card-title>
         <h1>DONATE TO SAVE LIVES</h1>
       </mat-card-title>
     </mat-card-header>
-    <mat-card-content>
-      <p class="donationPurpose">
+    <mat-card-content class="donationCardBody">
+      <div class="donationPurpose">
         Your donation helps us provide healthcare services and housing to the poor people of Pampanga.
-      </p>
+      </div>
 
       <form
         [formGroup]="donationForm"
@@ -19,26 +19,29 @@
         <h2>
           Gift Information
         </h2>
-        <mat-button-toggle-group
-          [formControl]="donationForm.controls.amount">
-          <mat-button-toggle value="100">
-            ₱100
-          </mat-button-toggle>
-          <mat-button-toggle value="500" checked>
-            ₱500
-          </mat-button-toggle>
-          <mat-button-toggle value="1000">
-            ₱1000
-          </mat-button-toggle>
-          <mat-button-toggle value="5000">
-            ₱5000
-          </mat-button-toggle>
-          <mat-button-toggle value="10000">
-            ₱10000
-          </mat-button-toggle>
-        </mat-button-toggle-group>
 
-        <div>
+        <div class="field">
+          <mat-button-toggle-group
+            [formControl]="donationForm.controls.amount">
+            <mat-button-toggle value="100">
+              ₱100
+            </mat-button-toggle>
+            <mat-button-toggle value="500" checked>
+              ₱500
+            </mat-button-toggle>
+            <mat-button-toggle value="1000">
+              ₱1000
+            </mat-button-toggle>
+            <mat-button-toggle value="5000">
+              ₱5000
+            </mat-button-toggle>
+            <mat-button-toggle value="10000">
+              ₱10000
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+
+        <div class="field">
           <mat-form-field class="example-full-width">
             <span matPrefix>₱</span>
             <input matInput
@@ -48,23 +51,25 @@
           </mat-form-field>
         </div>  
 
-        <mat-button-toggle-group
-          [formControl]="donationForm.controls.frequency">
-          <mat-button-toggle value="{{ DonationFrequency.ONCE }}" checked>
-            Give once
-          </mat-button-toggle>
-          <mat-button-toggle value="{{ DonationFrequency.MONTHLY }}">
-            Give monthly
-          </mat-button-toggle>
-        </mat-button-toggle-group>
+        <div class="field">
+          <mat-button-toggle-group
+            [formControl]="donationForm.controls.frequency">
+            <mat-button-toggle value="{{ DonationFrequency.ONCE }}" checked>
+              Give once
+            </mat-button-toggle>
+            <mat-button-toggle value="{{ DonationFrequency.MONTHLY }}">
+              Give monthly
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
 
-        <mat-divider></mat-divider>
+        <mat-divider [inset]="true"></mat-divider>
 
         <h2>
           Payment Information
         </h2>
 
-        <div>
+        <div class="field">
           <mat-button-toggle-group
             [formControl]="donationForm.controls.paymentMethod">
             <mat-button-toggle value="{{ PaymentMethod.CREDIT_CARD }}" checked>
@@ -76,19 +81,21 @@
           </mat-button-toggle-group>
         </div>
 
-        <mat-form-field class="example-full-width">
-          <input
-            matInput
-            placeholder="Credit card number"
-            [errorStateMatcher]="matcher"
-            [formControl]="donationForm.controls.creditCardNumber">
-          <mat-error
-            *ngIf="donationForm.controls.creditCardNumber?.hasError('required')">
-            Credit card number is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
+        <div class="field">
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="Credit card number"
+              [errorStateMatcher]="matcher"
+              [formControl]="donationForm.controls.creditCardNumber">
+            <mat-error
+              *ngIf="donationForm.controls.creditCardNumber?.hasError('required')">
+              Credit card number is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
 
-        <div>
+        <div class="field">
           <mat-form-field>
             <input matInput [matDatepicker]="picker" placeholder="Choose a date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -96,19 +103,21 @@
           </mat-form-field>
         </div>
 
-        <mat-form-field class="example-full-width">
-          <input
-            matInput
-            placeholder="CVC"
-            [errorStateMatcher]="matcher"
-            [formControl]="donationForm.controls.cvc">
-          <mat-error
-            *ngIf="donationForm.controls.cvc?.hasError('required')">
-            CVC is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
+        <div class="field">
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="CVC"
+              [errorStateMatcher]="matcher"
+              [formControl]="donationForm.controls.cvc">
+            <mat-error
+              *ngIf="donationForm.controls.cvc?.hasError('required')">
+              CVC is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
 
-        <mat-divider></mat-divider>
+        <mat-divider [inset]="true"></mat-divider>
 
         <h2>
           Billing Information
