@@ -1,66 +1,37 @@
-.backgroundImg {
-    width: 100%;
-    height: 100%;
-    background: url('../../assets/parentsCarryingCleftLipBaby.jpg') no-repeat;
+.donationPageContainer {
+    background: url('../../assets/parentsCarryingCleftLipBaby.jpg');
+    background-attachment: fixed;
     background-size: cover;
-}
+    overflow: auto;
 
-.homepageHeader {
-    font-size: 64px;
-}    
+    .donationPageFormCardContainer {
+        margin: 50px auto;
+        width: 90%;
+        max-width: 1000px;
 
-.homepageMainContentContainer {
-    display: flex;
-    height: 900px;
-}
+        .donationFormCard {
+            max-width: 560px;
 
-.donationFormCard {
-    left: 7%;
-    max-width: 600px;
-    min-width: 400px;
-    position: relative;
-    top: 18%;
-    
-    .donationCardBody {
-        margin: 0 16px;
-
-        .divider {
-            margin: 8px 0;
-        }
-
-        .donationPurpose {
-            font-size: 22px;
-        }
-
-        .field {
-            margin-bottom: 16px;
+            .donationCardBody {
+                margin: 0 16px;
+        
+                .donationPurpose {
+                    font-size: 22px;
+                }
+        
+                .field {
+                    margin-bottom: 16px;
+                }
+            }
         }
     }
 }
 
 @media screen and (max-width: 560px) {
-    .backgroundImg {
-        width: 100%;
-        height: 100%;
-        background: url('../../assets/parentsCarryingCleftLipBaby.jpg') no-repeat;
-        background-size: cover;
-    }
-
-    .donateCTA {
-        color: white;
-    }
-
-    .homepageMainContentContainer {
-        display: flex;
-        height: 720px;
-    }
-}
-
-@media screen and (min-width: 560px) {
-    .donateCTA {
-        color: white;
-        font-size: 18px;    
-        min-height: 50px;
-        min-width: 180px;
+    .donationPageContainer {
+        .donationPageFormCardContainer {
+            margin: 200px auto;
+            max-width: 560px;    
+        }
     }
 }
