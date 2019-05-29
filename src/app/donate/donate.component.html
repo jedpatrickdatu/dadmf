@@ -21,42 +21,55 @@
 
           <div class="field">
             <mat-button-toggle-group
+              class="donationAmountBtns"
               [formControl]="donationForm.controls.amount">
-              <mat-button-toggle value="100">
+              <mat-button-toggle
+                class="donationAmountOptionBtn"
+                value="100">
                 ₱100
               </mat-button-toggle>
-              <mat-button-toggle value="500" checked>
+              <mat-button-toggle
+                class="donationAmountOptionBtn"                
+                value="500" checked>
                 ₱500
               </mat-button-toggle>
-              <mat-button-toggle value="1000">
+              <mat-button-toggle
+                class="donationAmountOptionBtn"                                
+                value="1000">
                 ₱1000
               </mat-button-toggle>
-              <mat-button-toggle value="5000">
+              <mat-button-toggle
+                class="donationAmountOptionBtn"                
+                value="5000">
                 ₱5000
               </mat-button-toggle>
-              <mat-button-toggle value="10000">
+              <mat-button-toggle
+                class="donationAmountOptionBtn"                                
+                value="10000">
                 ₱10000
               </mat-button-toggle>
             </mat-button-toggle-group>
           </div>
 
           <div class="field">
-            <mat-form-field class="example-full-width">
-              <span matPrefix>₱</span>
-              <input matInput
-                placeholder="Other amount"
-                value="0"
-                [formControl]="donationForm.controls.amount">
-            </mat-form-field>
+            <input
+              class="donationInputBox"
+              placeholder="Other amount"
+              [formControl]="donationForm.controls.amount">
           </div>  
 
           <div class="field">
             <mat-button-toggle-group
+              class="binaryChoiceToggle"
               [formControl]="donationForm.controls.frequency">
-              <mat-button-toggle value="{{ DonationFrequency.ONCE }}" checked>
+              <mat-button-toggle 
+                class="binaryChoiceToggleBtn"                
+                value="{{ DonationFrequency.ONCE }}" checked>
                 Give once
               </mat-button-toggle>
-              <mat-button-toggle value="{{ DonationFrequency.MONTHLY }}">
+              <mat-button-toggle
+                class="binaryChoiceToggleBtn"                                
+                value="{{ DonationFrequency.MONTHLY }}">
                 Give monthly
               </mat-button-toggle>
             </mat-button-toggle-group>
@@ -70,28 +83,32 @@
 
           <div class="field">
             <mat-button-toggle-group
+              class="binaryChoiceToggle"
               [formControl]="donationForm.controls.paymentMethod">
-              <mat-button-toggle value="{{ PaymentMethod.CREDIT_CARD }}" checked>
+              <mat-button-toggle
+                class="binaryChoiceToggleBtn"                                
+                value="{{ PaymentMethod.CREDIT_CARD }}" checked>
                 Pay by credit card
               </mat-button-toggle>
-              <mat-button-toggle value="{{ PaymentMethod.PAYPAL }}">
+              <mat-button-toggle
+                class="binaryChoiceToggleBtn"                                
+                value="{{ PaymentMethod.PAYPAL }}">
                 Pay by Paypal
               </mat-button-toggle>
             </mat-button-toggle-group>
           </div>
 
           <div class="field">
-            <mat-form-field class="example-full-width">
-              <input
-                matInput
-                placeholder="Credit card number"
-                [errorStateMatcher]="matcher"
-                [formControl]="donationForm.controls.creditCardNumber">
-              <mat-error
-                *ngIf="donationForm.controls.creditCardNumber?.hasError('required')">
-                Credit card number is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
+            <div class="donationInputBoxLabel"> 
+              Card number
+            </div>
+            <input
+              class="donationInputBox"
+              [formControl]="donationForm.controls.creditCardNumber">
+            <!-- <mat-error
+              *ngIf="donationForm.controls.creditCardNumber?.hasError('required')">
+              Credit card number is <strong>required</strong>
+            </mat-error> -->
           </div>
 
           <div class="field">

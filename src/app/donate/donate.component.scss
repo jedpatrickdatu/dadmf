@@ -1,6 +1,5 @@
 .donationPageContainer {
-    background: url('../../assets/parentsCarryingCleftLipBaby.jpg');
-    background-attachment: fixed;
+    background: url('../../assets/parentsCarryingCleftLipBaby.jpg') no-repeat fixed center;
     background-size: cover;
     overflow: auto;
 
@@ -8,6 +7,43 @@
         margin: 50px auto;
         width: 90%;
         max-width: 1000px;
+        min-width: 560px;
+
+        .binaryChoiceToggle {
+            width: 100%;
+            border: 2px solid purple;
+            border-radius: 8px;
+            min-width: 320px;
+    
+            .binaryChoiceToggleBtn {
+                font-size: 18px;
+                width: 50%;
+    
+                &.mat-button-toggle-checked {
+                    background-color: purple;
+                    color: white;
+                }
+            }
+        }
+    
+        .donationAmountBtns {
+            border: none;
+            border-radius: 0;
+            justify-content: space-between;
+            width: 100%;
+        }
+    
+        .donationAmountOptionBtn {
+            background-color: green;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            width: 18%;
+    
+            &.mat-button-toggle-checked {
+                background-color: purple;
+            }
+        }
 
         .donationFormCard {
             max-width: 560px;
@@ -23,6 +59,19 @@
                     margin-bottom: 16px;
                 }
             }
+        }
+
+        .donationInputBoxLabel {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .donationInputBox {
+            border-radius: 8px;
+            border: 2px solid gray;
+            font-size: 22px;
+            height: 48px;
+            width: 100%; 
         }
     }
 }
