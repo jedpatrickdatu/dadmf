@@ -1,21 +1,21 @@
-.donationPageContainer {
+.donation-page-container {
     background: url('../../assets/parentsCarryingCleftLipBaby.jpg') no-repeat fixed center;
     background-size: cover;
     overflow: auto;
 
-    .donationPageFormCardContainer {
+.donation-page-form-card-container {
         margin: 50px auto;
         width: 90%;
         max-width: 1000px;
         min-width: 560px;
 
-        .binaryChoiceToggle {
+        .binary-choice-toggle-container {
             width: 100%;
-            border: 2px solid purple;
+            border: 1px solid purple;
             border-radius: 8px;
             min-width: 320px;
     
-            .binaryChoiceToggleBtn {
+            .binary-choice-toggle-container__btn {
                 font-size: 18px;
                 width: 50%;
     
@@ -26,59 +26,118 @@
             }
         }
     
-        .donationAmountBtns {
+        .donation-amount-selection {
             border: none;
             border-radius: 0;
             justify-content: space-between;
             width: 100%;
-        }
-    
-        .donationAmountOptionBtn {
-            background-color: green;
-            border-radius: 8px;
-            color: white;
-            font-size: 18px;
-            width: 18%;
-    
-            &.mat-button-toggle-checked {
-                background-color: purple;
+
+            .donation-amount-selection__button {
+                background-color: green;
+                border-radius: 8px;
+                color: white;
+                font-size: 18px;
+                width: 18%;
+        
+                &.mat-button-toggle-checked {
+                    background-color: purple;
+                }
             }
         }
 
-        .donationFormCard {
+        .donation-form-card {
             max-width: 560px;
 
-            .donationCardBody {
+            .donation-form-card__header-title {
+                margin: 12px 0 18px;
+            }
+
+            .donation-card-content {
                 margin: 0 16px;
         
-                .donationPurpose {
-                    font-size: 22px;
+                .donation-card-content__description {
+                    font-size: 20px;
                 }
-        
-                .field {
-                    margin-bottom: 16px;
+
+                .donation-form-section {
+                    margin: 48px 0;
+
+                    .donation-form-section__header {
+                        font-size: 26px;
+                        font-weight: bold;
+                        margin-bottom: 16px;
+                    }
+            
+                    .donation-form-section__field-row {
+                        margin-bottom: 16px;
+                    }
                 }
             }
         }
 
-        .donationInputBoxLabel {
+        .donation-page-form-card-container__input-box-label {
             font-size: 18px;
             margin-bottom: 4px;
+            padding: 0;
         }
 
-        .donationInputBox {
+        .donation-page-form-card-container__input-box {
             border-radius: 8px;
-            border: 2px solid gray;
-            font-size: 22px;
+            border: 1px solid darkgray;
+            font-size: 18px;
             height: 48px;
             width: 100%; 
+        }
+
+        .donation-form-select-box-container {
+            border-radius: 8px;
+            border: 1px solid darkgray;
+            display: inline-flex;
+            height: 48px;
+            overflow: hidden;
+
+            .donation-form-select-box-container__select-box {
+                background: white;
+                border: 0;
+                font-size: 18px;
+                height: 40px;
+                width: 140px;
+            }
+        }
+    }
+
+    .submit-container {
+        display: flex;
+        justify-content: flex-end;
+        margin: 30px 0 12px;
+
+        .donation-summary {
+            margin-right: 16px;
+
+            .donation-summary__cost {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 4px;
+            }
+
+            .donation-summary__frequency {
+                color: darkslategray;
+                display: flex;
+                font-size: 16px;
+                justify-content: flex-end;
+            }
+        }
+
+        .submit-container__btn {
+            font-size: 20px;
+            font-weight: bold;
         }
     }
 }
 
 @media screen and (max-width: 560px) {
-    .donationPageContainer {
-        .donationPageFormCardContainer {
+    .donation-page-container {
+        .donation-page-form-card-container {
             margin: 200px auto;
             max-width: 560px;    
         }
