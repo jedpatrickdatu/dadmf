@@ -106,13 +106,14 @@
             display: inline-flex;
             height: 48px;
             overflow: hidden;
+            width: 100%;
 
             .donation-form-select-box-container__select-box {
                 background: white;
                 border: 0;
                 font-size: 18px;
                 height: 40px;
-                width: 140px;
+                width: 100%;
             }
         }
     }
