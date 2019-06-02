@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { MainNavService } from '../main-nav.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,6 +19,7 @@ export class MainNavComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
+    private mainNav: MainNavService,
     private router: Router
   ) {}
 

@@ -2,9 +2,9 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [ngClass]="{ hidden : !(isHandset$ | async) }"
+      *ngIf="mainNav.isShowMenuItems && !(isHandset$ | async)"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>Hello there!</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">ABOUT US</a>
       <a mat-list-item href="#">PROGRAMS</a>
@@ -43,7 +43,7 @@
       </div>
       <span class="spacer"></span>
       <div
-        [ngClass]="{ hidden : isHandset$ | async }">
+        *ngIf="mainNav.isShowMenuItems && !(isHandset$ | async )">
         <a href="#">ABOUT US</a>
         <a href="#">OUR PROGRAMS</a>
         <a href="#">GET INVOLVED</a>

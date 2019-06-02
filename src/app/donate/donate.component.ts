@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
 import { tap } from 'rxjs/operators';
+import { MainNavService } from '../main-nav.service';
 
 export interface Month {
   name: string;
@@ -132,9 +133,12 @@ export class DonateComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
   
-  constructor() { }
+  constructor(
+    private mainNav: MainNavService,
+  ) { }
 
   ngOnInit() {
+    this.mainNav.hideMenuItems();
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
 
