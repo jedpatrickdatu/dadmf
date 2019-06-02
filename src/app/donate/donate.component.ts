@@ -107,7 +107,7 @@ export class DonateComponent implements OnInit {
     creditCardExpiryYear: new FormControl('', [
       Validators.required,
     ]),
-    city: new FormControl('Manila', [
+    city: new FormControl('Angeles', [
       Validators.required,
     ]),
     customAmount: new FormControl('', [
