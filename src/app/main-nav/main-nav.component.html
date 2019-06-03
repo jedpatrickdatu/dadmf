@@ -2,8 +2,7 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      *ngIf="mainNav.isShowMenuItems && !(isHandset$ | async)"
-      [opened]="!(isHandset$ | async)">
+      *ngIf="mainNav.isShowMenuItems && (isHandset$ | async)">
     <mat-toolbar>Hello there!</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">ABOUT US</a>
@@ -24,7 +23,7 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="mainNav.isShowMenuItems && (isHandset$ | async)">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <div
@@ -43,7 +42,7 @@
       </div>
       <span class="spacer"></span>
       <div
-        *ngIf="mainNav.isShowMenuItems && !(isHandset$ | async )">
+        *ngIf="mainNav.isShowMenuItems && !( isHandset$ | async )">
         <a href="#">ABOUT US</a>
         <a href="#">OUR PROGRAMS</a>
         <a href="#">GET INVOLVED</a>

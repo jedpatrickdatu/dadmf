@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MainNavService } from '../main-nav.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,15 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   constructor(
-    private router: Router
-  ) { }
+    private router: Router,
+    private mainNav: MainNavService
+  ) {
+    this.mainNav.showMenuItems();
+   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('home');
+  }
 
   redirectToDonatePage(){
     this.router.navigate(['donate']);

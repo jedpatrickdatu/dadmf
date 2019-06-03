@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MainNavService {
-  isShowMenuItems: boolean;
+  isShowMenuItems = true;
 
-  constructor() { this.isShowMenuItems = false; }
+  constructor() {}
 
   hideMenuItems() { this.isShowMenuItems = false; }
 

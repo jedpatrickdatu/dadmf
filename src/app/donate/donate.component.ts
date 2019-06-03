@@ -135,10 +135,11 @@ export class DonateComponent implements OnInit {
   
   constructor(
     private mainNav: MainNavService,
-  ) { }
+  ) {
+    this.mainNav.hideMenuItems();
+   }
 
   ngOnInit() {
-    this.mainNav.hideMenuItems();
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
 
