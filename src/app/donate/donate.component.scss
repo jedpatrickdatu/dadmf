@@ -7,13 +7,11 @@
         margin: 50px auto;
         width: 90%;
         max-width: 1000px;
-        min-width: 560px;
 
         .binary-choice-toggle-container {
             width: 100%;
             border: 1px solid purple;
             border-radius: 8px;
-            min-width: 320px;
     
             .binary-choice-toggle-container__btn {
                 font-size: 18px;
@@ -71,7 +69,6 @@
                     .donation-form-field-row {
                         display: flex;
                         margin-bottom: 16px;
-                        width: 100%;
 
                         .donation-form-field-column {
                             flex: 1;
