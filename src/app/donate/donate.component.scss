@@ -30,10 +30,15 @@
             justify-content: space-between;
             width: 100%;
 
+            .donation-amount-selection__radio-checkbox {
+                visibility: hidden;
+            }
+
             .donation-amount-selection__button {
                 background-color: green;
                 border-radius: 8px;
                 color: white;
+                cursor: pointer;
                 font-size: 18px;
                 width: 18%;
         

@@ -22,35 +22,70 @@
 
             <div class="donation-form-field-row">
               <div class="donation-form-field-column">
-                <mat-button-toggle-group
-                  class="donation-amount-selection"
-                  [formControl]="donationForm.controls.amount">
-                  <mat-button-toggle
+                <div
+                  class="donation-amount-selection">
+                  <input
+                    class="donation-amount-selection__radio-checkbox"
+                    id="100Amount"
+                    type='radio'
+                    value='100'
+                    [formControl]="donationForm.controls.amount"/>
+                  <label
                     class="donation-amount-selection__button"
+                    for="100Amount"
                     value="100">
                     ₱100
-                  </mat-button-toggle>
-                  <mat-button-toggle
-                    class="donation-amount-selection__button"                
-                    value="500" checked>
+                  </label>
+                  <input
+                    class="donation-amount-selection__radio-checkbox"
+                    id="500Amount"
+                    type='radio'
+                    value='500'
+                    [formControl]="donationForm.controls.amount"/>
+                  <label
+                    class="donation-amount-selection__button"
+                    for="500Amount"
+                    value="500"
+                    checked>
                     ₱500
-                  </mat-button-toggle>
-                  <mat-button-toggle
+                  </label>
+                  <input
+                    class="donation-amount-selection__radio-checkbox"
+                    id="1000Amount"
+                    type='radio'
+                    value='1000'
+                    [formControl]="donationForm.controls.amount"/>
+                  <label
                     class="donation-amount-selection__button"                                
+                    for="1000Amount"                    
                     value="1000">
                     ₱1000
-                  </mat-button-toggle>
-                  <mat-button-toggle
+                  </label>
+                  <input
+                    class="donation-amount-selection__radio-checkbox"
+                    id="5000Amount"
+                    type='radio'
+                    value='5000'
+                    [formControl]="donationForm.controls.amount"/>
+                  <label
                     class="donation-amount-selection__button"                
+                    for="5000Amount"                    
                     value="5000">
                     ₱5000
-                  </mat-button-toggle>
-                  <mat-button-toggle
+                  </label>
+                  <input
+                    class="donation-amount-selection__radio-checkbox"
+                    id="10000Amount"
+                    type='radio'
+                    value='10000'
+                    [formControl]="donationForm.controls.amount"/>
+                  <label
                     class="donation-amount-selection__button"                                
+                    for="10000Amount"                    
                     value="10000">
                     ₱10000
-                  </mat-button-toggle>
-                </mat-button-toggle-group>
+                  </label>
+                </div>
               </div>
             </div>
 
