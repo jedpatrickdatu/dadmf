@@ -11,39 +11,16 @@
         .binary-choice-toggle-container {
             width: 100%;
             border: 1px solid purple;
-            border-radius: 8px;
+            border-radius: 6px;
     
             .binary-choice-toggle-container__btn {
                 font-size: 18px;
+                white-space: normal;
                 width: 50%;
     
                 &.mat-button-toggle-checked {
                     background-color: purple;
                     color: white;
-                }
-            }
-        }
-    
-        .donation-amount-selection {
-            border: none;
-            border-radius: 0;
-            justify-content: space-between;
-            width: 100%;
-
-            .donation-amount-selection__radio-checkbox {
-                visibility: hidden;
-            }
-
-            .donation-amount-selection__button {
-                background-color: green;
-                border-radius: 8px;
-                color: white;
-                cursor: pointer;
-                font-size: 18px;
-                width: 18%;
-        
-                &.mat-button-toggle-checked {
-                    background-color: purple;
                 }
             }
         }
@@ -84,6 +61,55 @@
                         }
                     }
                 }
+
+                .submit-container {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin: 30px 0 12px;
+            
+                    .donation-summary {
+                        margin-right: 16px;
+            
+                        .donation-summary__cost {
+                            font-size: 24px;
+                            font-weight: bold;
+                            margin-bottom: 4px;
+                        }
+            
+                        .donation-summary__frequency {
+                            color: darkslategray;
+                            display: flex;
+                            font-size: 16px;
+                            justify-content: flex-end;
+                        }
+                    }
+            
+                    .submit-container__btn {
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .donation-amount-selection {
+                border: none;
+                border-radius: 0;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
+    
+                .donation-amount-selection__btn {
+                    background-color: green;
+                    border-radius: 6px;
+                    color: white;
+                    font-size: 18px;
+                    margin-bottom: 8px;
+                    width: 18%;
+            
+                    &.mat-button-toggle-checked {
+                        background-color: purple;
+                    }
+                }
             }
         }
 
@@ -94,7 +120,7 @@
         }
 
         .donation-page-form-card-container__input-box {
-            border-radius: 8px;
+            border-radius: 6px;
             border: 1px solid darkgray;
             font-size: 18px;
             height: 48px;
@@ -103,7 +129,7 @@
         }
 
         .donation-form-select-box-container {
-            border-radius: 8px;
+            border-radius: 6px;
             border: 1px solid darkgray;
             display: inline-flex;
             height: 48px;
@@ -119,41 +145,64 @@
             }
         }
     }
-
-    .submit-container {
-        display: flex;
-        justify-content: flex-end;
-        margin: 30px 0 12px;
-
-        .donation-summary {
-            margin-right: 16px;
-
-            .donation-summary__cost {
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 4px;
-            }
-
-            .donation-summary__frequency {
-                color: darkslategray;
-                display: flex;
-                font-size: 16px;
-                justify-content: flex-end;
-            }
-        }
-
-        .submit-container__btn {
-            font-size: 20px;
-            font-weight: bold;
-        }
-    }
 }
 
 @media screen and (max-width: 560px) {
     .donation-page-container {
         .donation-page-form-card-container {
             margin: 200px auto;
-            max-width: 560px;    
+            width: 94%;
+
+            .donation-form-card {
+                .donation-card-content {
+                    margin: 0;
+
+                    .donation-form-section {
+                        margin: 42px 0;
+                    }
+
+                    .submit-container {
+                        align-items: center;
+                        flex-direction: column;
+                
+                        .donation-summary {
+                            align-items: center;
+                            display: flex;
+                            flex-direction: column;
+                            margin-right: 0;
+                            margin-bottom: 24px;
+                
+                            .donation-summary__cost {
+                                font-size: 24px;
+                                font-weight: bold;
+                                margin-bottom: 4px;
+                            }
+                
+                            .donation-summary__frequency {
+                                color: darkslategray;
+                                display: flex;
+                                font-size: 16px;
+                                justify-content: flex-end;
+                            }
+                        }
+                
+                        .submit-container__btn {
+                            font-size: 20px;
+                            font-weight: bold;
+                            height: 52px;
+                            width: 160px;
+                        }
+                    }
+                }
+
+                .donation-amount-selection {
+                    .donation-amount-selection__btn {
+                        font-size: 20px;
+                        margin-bottom: 8px;
+                        width: 48%;
+                    }
+                }
+            }
         }
     }
 }

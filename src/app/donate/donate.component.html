@@ -15,78 +15,41 @@
           [formGroup]="donationForm"
           (ngSubmit)="onSubmit()"
         >
-          <div class="donation-form-section donation-form-section">
+          <div class="donation-form-section">
             <div class="donation-form-section__header">
               Gift Information
             </div>
 
             <div class="donation-form-field-row">
-              <div class="donation-form-field-column">
-                <div
-                  class="donation-amount-selection">
-                  <input
-                    class="donation-amount-selection__radio-checkbox"
-                    id="100Amount"
-                    type='radio'
-                    value='100'
-                    [formControl]="donationForm.controls.amount"/>
-                  <label
-                    class="donation-amount-selection__button"
-                    for="100Amount"
-                    value="100">
-                    ₱100
-                  </label>
-                  <input
-                    class="donation-amount-selection__radio-checkbox"
-                    id="500Amount"
-                    type='radio'
-                    value='500'
-                    [formControl]="donationForm.controls.amount"/>
-                  <label
-                    class="donation-amount-selection__button"
-                    for="500Amount"
-                    value="500"
-                    checked>
-                    ₱500
-                  </label>
-                  <input
-                    class="donation-amount-selection__radio-checkbox"
-                    id="1000Amount"
-                    type='radio'
-                    value='1000'
-                    [formControl]="donationForm.controls.amount"/>
-                  <label
-                    class="donation-amount-selection__button"                                
-                    for="1000Amount"                    
-                    value="1000">
-                    ₱1000
-                  </label>
-                  <input
-                    class="donation-amount-selection__radio-checkbox"
-                    id="5000Amount"
-                    type='radio'
-                    value='5000'
-                    [formControl]="donationForm.controls.amount"/>
-                  <label
-                    class="donation-amount-selection__button"                
-                    for="5000Amount"                    
-                    value="5000">
-                    ₱5000
-                  </label>
-                  <input
-                    class="donation-amount-selection__radio-checkbox"
-                    id="10000Amount"
-                    type='radio'
-                    value='10000'
-                    [formControl]="donationForm.controls.amount"/>
-                  <label
-                    class="donation-amount-selection__button"                                
-                    for="10000Amount"                    
-                    value="10000">
-                    ₱10000
-                  </label>
-                </div>
-              </div>
+              <mat-button-toggle-group
+                class="donation-amount-selection"
+                [formControl]="donationForm.controls.amount">
+                <mat-button-toggle
+                  class="donation-amount-selection__btn"
+                  value="100">
+                  ₱100
+                </mat-button-toggle>
+                <mat-button-toggle
+                  class="donation-amount-selection__btn"                
+                  value="500" checked>
+                  ₱500
+                </mat-button-toggle>
+                <mat-button-toggle
+                  class="donation-amount-selection__btn"                                
+                  value="1000">
+                  ₱1000
+                </mat-button-toggle>
+                <mat-button-toggle
+                  class="donation-amount-selection__btn"                
+                  value="5000">
+                  ₱5000
+                </mat-button-toggle>
+                <mat-button-toggle
+                  class="donation-amount-selection__btn"                                
+                  value="10000">
+                  ₱10000
+                </mat-button-toggle>
+              </mat-button-toggle-group>
             </div>
 
             <div class="donation-form-field-row">
@@ -102,22 +65,20 @@
             </div>  
 
             <div class="donation-form-field-row">
-              <div class="donation-form-field-column">
                 <mat-button-toggle-group
                   class="binary-choice-toggle-container"
                   [formControl]="donationForm.controls.frequency">
                   <mat-button-toggle 
                     class="binary-choice-toggle-container__btn"                
                     value="{{ DonationFrequency.ONCE }}" checked>
-                    Give Once
+                    One-time
                   </mat-button-toggle>
                   <mat-button-toggle
                     class="binary-choice-toggle-container__btn"                                
                     value="{{ DonationFrequency.MONTHLY }}">
-                    Give Monthly
+                    Monthly
                   </mat-button-toggle>
                 </mat-button-toggle-group>
-              </div>
             </div>
           </div>
 
@@ -135,12 +96,12 @@
                 <mat-button-toggle
                   class="binary-choice-toggle-container__btn"                                
                   value="{{ PaymentMethod.CREDIT_CARD }}" checked>
-                  Pay by Credit Card
+                  Credit Card
                 </mat-button-toggle>
                 <mat-button-toggle
                   class="binary-choice-toggle-container__btn"                                
                   value="{{ PaymentMethod.PAYPAL }}">
-                  Pay by Paypal
+                  Paypal
                 </mat-button-toggle>
               </mat-button-toggle-group>
             </div>
@@ -159,7 +120,7 @@
             <div class="donation-form-field-row">
               <div class="donation-form-field-column">
                 <div class="donation-page-form-card-container__input-box-label"> 
-                  Expiry Month
+                  Month
                 </div>
                 <div class="donation-form-select-box-container">
                   <select
@@ -177,7 +138,7 @@
               </div>
               <div class="donation-form-field-column">
                 <div class="donation-page-form-card-container__input-box-label"> 
-                  Expiry Year
+                  Year
                 </div>
                 <div class="donation-form-select-box-container">
                   <select
@@ -268,16 +229,33 @@
                     </option>
                   </select>
                 </div>
-              </div>
-              <div class="donation-form-field-column">
-                <div class="donation-page-form-card-container__input-box-label"> 
-                  Zip code
-                </div>
-                <input
-                  class="donation-page-form-card-container__input-box"
-                  [formControl]="donationForm.controls.zipCode">
               </div>            
             </div>
+
+            <div class="donation-form-field-row">
+                <div class="donation-form-field-column">
+                  <div class="donation-page-form-card-container__input-box-label"> 
+                    Country
+                  </div>
+                  <div class="donation-form-select-box-container">
+                    <select
+                      class="donation-form-select-box-container__select-box"
+                      [formControl]="donationForm.controls.city">
+                      <option *ngFor="let country of countries" [value]="country">
+                        {{ country }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="donation-form-field-column">
+                  <div class="donation-page-form-card-container__input-box-label"> 
+                    Zip code
+                  </div>
+                  <input
+                    class="donation-page-form-card-container__input-box"
+                    [formControl]="donationForm.controls.zipCode">
+                </div>            
+              </div>
 
             <div class="donation-form-field-row">
                 <div class="donation-form-field-column">

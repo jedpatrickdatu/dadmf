@@ -88,6 +88,12 @@ export class DonateComponent implements OnInit {
     'Manila'
   ]
 
+  countries: ReadonlyArray<string> = [
+    'England',
+    'North America',
+    'Philippines',
+  ]
+
   states: ReadonlyArray<string> = [
     'Bulacan',
     'NCR',
@@ -102,13 +108,16 @@ export class DonateComponent implements OnInit {
     creditCardNumber: new FormControl('', [
       Validators.required,
     ]),
-    creditCardExpiryMonth: new FormControl('January', [
+    creditCardExpiryMonth: new FormControl(MONTHS[0], [
       Validators.required,
     ]),
-    creditCardExpiryYear: new FormControl('', [
+    creditCardExpiryYear: new FormControl(this.creditCardExpiryYears[0], [
       Validators.required,
     ]),
     city: new FormControl('Angeles', [
+      Validators.required,
+    ]),
+    country: new FormControl('Philippines', [
       Validators.required,
     ]),
     customAmount: new FormControl('', [
