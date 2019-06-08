@@ -13,7 +13,7 @@
       <a mat-list-item href="#">GET INVOLVED</a>
       <button mat-flat-button
         [ngClass]="{'donateCTA':true, 'donateCTA--sidenav':true }"
-        (click)="redirectToDonatePage()"
+        (click)="redirectToURL('donate')"
         color="accent">
           DONATE
       </button>
@@ -37,7 +37,7 @@
       </div>
       <span class="spacer"></span>
       <div
-        *ngIf="mainNav.isShowMenuItems && !( isHandset$ | async )">
+        *ngIf="isMainNavShowMenuItems() && !( isHandset$ | async )">
         <a href="#">ABOUT US</a>
         <a href="#">OUR PROGRAMS</a>
         <a href="#">GET INVOLVED</a>
@@ -53,7 +53,7 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="mainNav.isShowMenuItems && (isHandset$ | async)">
+        *ngIf="isMainNavShowMenuItems() && (isHandset$ | async)">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
     </mat-toolbar>

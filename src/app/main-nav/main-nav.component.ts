@@ -19,9 +19,13 @@ export class MainNavComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
+    private router: Router,
     private mainNav: MainNavService,
-    private router: Router
   ) {}
+
+  isMainNavShowMenuItems() {
+    return this.mainNav.isShowMenuItems;
+  }
 
   redirectToURL(URL: string){
     this.router.navigate([URL]);
