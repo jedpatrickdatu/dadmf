@@ -1,15 +1,13 @@
-<div class="donation-page-container">
-  <div class="backgroundImg">
-    <div class="homepageMainContent">
-      <h1 class="homepageHeader">
-        PROVIDING HEALTHCARE FOR UNDERPRIVILEGED KAPAMPANGANS
-      </h1>
-      <button mat-flat-button
-        [ngClass]="{'donateCTA':true}"
-        (click)="redirectToDonatePage()"
-        color="accent">
-          DONATE TODAY
-      </button>
-    </div>
+<div class="homepage">
+  <div class="homepage-content">
+    <h1 class="homepage-content__header">
+      PROVIDING HEALTHCARE FOR UNDERPRIVILEGED KAPAMPANGANS
+    </h1>
+    <button mat-flat-button
+      [ngClass]="{'homepage__donate-cta':true}"
+      (click)="redirectToDonatePage()"
+      color="accent">
+        DONATE TODAY
+    </button>
   </div>
 </div>
